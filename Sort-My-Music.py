@@ -1,9 +1,16 @@
 import os
 import shutil
 from mutagen.easyid3 import EasyID3
+import tkinter as tk
+from tkinter.filedialog import askdirectory
+
+# Create a Tkinter root window (hidden)
+root = tk.Tk()
+root.withdraw()
 
 # Specify the source and destination directories
-source_dir = r'C:\Users\joshu\Music\Library\Unsorted'
+source_dir = askdirectory(title="Select the directory of unsorted music")
+print(f"Selected source directory: {source_dir}")
 destination_dir = r'C:\Users\joshu\Music\Library'
 
 # Create the destination directory if it doesn't exist

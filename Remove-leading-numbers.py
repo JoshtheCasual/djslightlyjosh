@@ -1,9 +1,16 @@
 import os
 from mutagen.easyid3 import EasyID3
+import tkinter as tk
+from tkinter.filedialog import askdirectory
 import re
 
+# Create a Tkinter root window (hidden)
+root = tk.Tk()
+root.withdraw()
+
 # Specify the directory where your music files are located
-music_directory = r'C:\Users\joshu\Music\Library\Unsorted'
+music_directory = askdirectory(title="Select the directory of ")
+print(f"Selected directory: {music_directory}")
 
 # Regular expression to match artist names with leading numbers, dots, and spaces
 pattern = re.compile(r"^\d+\.\s+")
