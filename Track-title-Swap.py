@@ -1,9 +1,16 @@
 import os
 from mutagen.easyid3 import EasyID3
 import re
+import tkinter as tk
+from tkinter.filedialog import askdirectory
+
+# Create a Tkinter root window (hidden)
+root = tk.Tk()
+root.withdraw()
 
 # Set the path to the directory containing your music tracks
-path = r'C:\Users\joshu\Music\Library\DnB\Beatport - Top Beatport Best New Drum & Bass December 2023'
+path = askdirectory(title="Select the directory of ")
+print(f"Selected directory: {path}")
 
 # Regular expression to match artist, title, optional mix (in parentheses), and optional BPM
 pattern = re.compile(r"(.+) - (.+?)( \((.+?)\))?( \d+)?\.mp3$")
